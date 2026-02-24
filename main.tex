@@ -11,6 +11,10 @@
 \usepackage{xcolor}
 \usepackage{listings}
 
+\renewenvironment{quote}
+{\list{}{\leftmargin=0pt \rightmargin=0pt}\item\relax}
+{\endlist}
+
 
 
 \lstdefinestyle{lstlisting}{
@@ -37,7 +41,7 @@
 
 \newcommand{\LVA}{LANGBez.}
 \newcommand{\LVAKURZ}{KURZBez.}
-\newcommand{\SEMESTER}{WS 2025/2026}
+\newcommand{\SEMESTER}{SS 2025/2026}
 \newcommand{\UELABEL}{UE 01}
 \newcommand{\UETITLE}{UETitle}
 \newcommand{\AUTHOR}{Klaus Höhfurtner}
@@ -51,6 +55,7 @@
 	\pagestyle{fancy}
 	
 	\maketitle
+	\thispagestyle{empty}
 	
 	\tikz [remember picture, overlay]
 	\node [shift={(3.7cm,-4cm)}] at (current page.north west)
@@ -66,6 +71,7 @@
 	
 	\pagenumbering{roman}
 	\tableofcontents
+	\fancyfoot[]{}
 	\clearpage
 	
 	\pagenumbering{arabic}
