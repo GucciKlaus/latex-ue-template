@@ -16,26 +16,6 @@
 {\endlist}
 
 
-
-\lstdefinestyle{lstlisting}{
-	backgroundcolor=\color{lightgray},   
-	numberstyle=\tiny\color{gray},
-	basicstyle=\ttfamily\footnotesize,
-	breakatwhitespace=false,         
-	breaklines=true,                 
-	captionpos=b,                    
-	keepspaces=true,                 
-	numbers=left,                    
-	numbersep=5pt,                  
-	showspaces=false,                
-	showstringspaces=false,
-	showtabs=false,                  
-	tabsize=2
-}
-
-\lstset{style=lstlisting}
-
-
 \setcounter{tocdepth}{3}
 \setlength{\parindent}{0pt}
 
@@ -51,6 +31,28 @@
 \date{\SEMESTER}
 
 \begin{document}
+
+	\lstdefinestyle{screendump}{
+		basicstyle=\ttfamily\small,
+		numbers=left,
+		numberstyle=\tiny\color{gray},
+		stepnumber=1,
+		numbersep=10pt,
+		frame=single,
+		breaklines=true,
+		breakatwhitespace=false,
+		columns=fixed,
+		basewidth=0.5em,
+		keepspaces=true,
+		showstringspaces=false,
+		tabsize=2,
+		captionpos=b,
+		backgroundcolor=\color{gray!5}
+	}
+
+	\lstnewenvironment{screendump}[1][]{
+		\lstset{style=screendump,#1}
+	}{}
 	
 	\pagestyle{fancy}
 	
@@ -84,17 +86,23 @@
 	\fancyfoot[L]{Seite \thepage\ von \pageref{LastPage}}
 	\fancyfoot[R]{\AUTHOR}
 	
-	\subsection*{Teil - 1}
-	\addcontentsline{toc}{subsection}{Teil - 1}
+	\subsection{Teil - 1}
+
 		
-	\subsubsection*{1.1. UE}
-	\addcontentsline{toc}{subsubsection}{1.1 UE}
+	\subsubsection{1.1. UE}
+
 	\begin{quote}
 		Test	
 	\end{quote}
-	\begin{lstlisting}
-	Test
-	\end{lstlisting}
+	\begin{screendump}[caption=test]
+	test
+	\end{screendump}
+
+	\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\textwidth]{images/fhooe_logo.jpg}
+	\caption{FH-Logo}
+	\end{figure}
 	
 
 \label{LastPage}
